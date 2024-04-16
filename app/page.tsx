@@ -6,9 +6,11 @@ import mocktodos from '@/mockdata/todos.json'
 import {PrimaryButton} from '@/components/buttons/PrimaryButton'
 import {useState} from 'react'
 import {Todo} from '@/types'
+import {createTodo} from '@/lib/createTodo'
 
 export default function Home() {
   const [todos, setTodos] = useState<Todo[]>(mocktodos)
+  const [newTodo, setNewTodo] = useState<null | string>(null)
   const [todoError, setTodoError] = useState<string | null>(null)
 
   return (
@@ -18,13 +20,19 @@ export default function Home() {
           <h1 className="text-2xl font-bold">Todo App</h1>
         </header>
 
-        <form className="flex w-full flex-col gap-2">
+        <form
+          className="flex w-full flex-col gap-2"
+          onSubmit={(e) =>
+            createTodo({e, setTodoError, setTodos, newTodo, setNewTodo})
+          }
+        >
           <div className="flex w-full gap-1">
             <input
               type="text"
               placeholder="Add your new todo"
-              name="newTodo"
-              className="min-h-full w-full border-2  pl-3"
+              value={newTodo ?? ''}
+              onChange={(e) => setNewTodo(e.currentTarget.value)}
+              className="min-h-full w-full border-2 pl-3"
             />
             <PrimaryButton content={<PlusIcon />} />
           </div>
