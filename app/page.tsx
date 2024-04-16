@@ -46,7 +46,7 @@ export default function Home() {
 
         <ul className="flex flex-col gap-2">
           {todos?.map((todo) => {
-            return <TodoCard key={todo.id} todo={todo} />
+            return <TodoCard key={todo.id} todo={todo} setTodos={setTodos} />
           }) ?? <li className="text-center">There are not pendings tasks</li>}
         </ul>
 
