@@ -1,37 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TodoApp
 
-## Getting Started
+## Table of contents
 
-First, run the development server:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Link](#link)
+- [My process](#my-process)
+  - [Prerequirements](#prerequirements)
+  - [Built with](#built-with)
+  - [How to run the project](#how-to-run-the-project)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### The challenge
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Users should be able to:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Be able to see create new tasks
+- Be able to read saved tasks
+- Be able to delete a single task
+- Be able to delete all tasks
 
-## Learn More
+### Screenshot
 
-To learn more about Next.js, take a look at the following resources:
+<div>
+  <div style='display: flex;; flex-direction: column; justify-content: center; width: 100%; gap: 20px; padding-top: 50px'>
+    <img src='./screenshots/desktop.jpeg'/>
+  </div>
+</div>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Link
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Live Demo: [https://guillermosancheztodoapp.netlify.app/](https://guillermosancheztodoapp.netlify.app/)
 
-## Deploy on Vercel
+### My process
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequirements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# todo-app
+- Node v20.11.1
+- npm v10.2.4
+
+### Built with
+
+- Mobile-first workflow
+- Semantic HTML5 markup
+- Tailwind CSS
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - JS Framework
+- [Typescript](https://www.typescriptlang.org/) - Strongly typed programming language that builds on JavaScript
+
+## How to run the project
+
+To run the project, follow these steps:
+
+1. Clone the repository `git@github.com:Guille-Sanchez/todo-app.git`.
+2. Once cloned, execute `npm install` to install dependencies.
+3. Execute `npm run dev` to run the project.
+
+After following these steps, the project should be up and running.
+
+### Useful resources
+
+- [React Hero Icons](https://heroicons.com/) - Recommended resource for icons.
+
+## Author
+
+- LinkedIn - [Guillermo Sanchez](https://www.linkedin.com/in/guillermo-sanchez-52a616268)
