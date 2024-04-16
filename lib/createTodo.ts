@@ -5,7 +5,7 @@ interface Props {
   e: React.FormEvent<HTMLFormElement>
   newTodo: string | null
   setTodoError: React.Dispatch<React.SetStateAction<string | null>>
-  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
+  setTodos: React.Dispatch<React.SetStateAction<Todo[] | null>>
   setNewTodo: React.Dispatch<React.SetStateAction<string | null>>
 }
 
@@ -32,6 +32,9 @@ export function createTodo({
 
   setTodoError(null)
   setTodos((prevTodos) => {
+    if (!prevTodos) {
+      return [{id, content: newTodo}]
+    }
     return [...prevTodos, {id, content: newTodo}]
   })
   setNewTodo(null)

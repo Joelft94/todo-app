@@ -7,9 +7,10 @@ import {PrimaryButton} from '@/components/buttons/PrimaryButton'
 import {useState} from 'react'
 import {Todo} from '@/types'
 import {createTodo} from '@/lib/createTodo'
+import {deleteAllTodo} from '@/lib/deleteTodos'
 
 export default function Home() {
-  const [todos, setTodos] = useState<Todo[]>(mocktodos)
+  const [todos, setTodos] = useState<Todo[] | null>(mocktodos)
   const [newTodo, setNewTodo] = useState<null | string>(null)
   const [todoError, setTodoError] = useState<string | null>(null)
 
@@ -44,17 +45,20 @@ export default function Home() {
         </form>
 
         <ul className="flex flex-col gap-2">
-          {todos.map((todo) => {
+          {todos?.map((todo) => {
             return <TodoCard key={todo.id} todo={todo} />
-          })}
+          }) ?? <li className="text-center">There are not pendings tasks</li>}
         </ul>
 
         <div className="flex items-center justify-between pt-3">
           <p>
-            You have {todos.length} pending{' '}
-            {todos.length > 1 ? 'tasks' : 'task'}
+            You have {todos?.length} pending{' '}
+            {todos && todos?.length > 1 ? 'tasks' : 'task'}
           </p>
-          <PrimaryButton content={'Clear All'} />
+          <PrimaryButton
+            content={'Clear All'}
+            handleOnClick={() => deleteAllTodo({setTodos})}
+          />
         </div>
       </section>
     </main>
